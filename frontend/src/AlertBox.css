@@ -1,0 +1,56 @@
+.alertBox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background: #ffeded;
+  border: 1px solid #ff5c5c;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+.alertContent {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.alertIcon {
+  font-size: 22px;
+  margin-right: 12px;
+}
+
+.alertText {
+  flex: 1;
+}
+
+.alertMessage {
+  font-weight: bold;
+  color: #d60000;
+  margin: 0;
+}
+
+.alertCategory {
+  font-size: 14px;
+  color: #333;
+  margin: 2px 0 0;
+}
+
+.alertClose {
+  background: none;
+  border: none;
+  color: #444;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.alertClose:hover {
+  color: #000;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(120%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}/* Container */

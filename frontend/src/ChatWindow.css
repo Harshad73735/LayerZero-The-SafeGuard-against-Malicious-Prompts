@@ -1,0 +1,168 @@
+.chatWindow {
+    background-color: #212121;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+/* navbar */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar span {
+    margin: 1rem 2rem;
+}
+
+.userIconDiv {
+    margin: 1rem 2rem;
+}
+
+.userIcon {
+    background-color: #339cff;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* chat input */
+.chatInput {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inputLoader {
+    position: absolute;
+    right: 50px; /* adjust to sit before submit button */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    width: 100%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    font-size: 0.8rem;
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px,
+                rgba(0, 0, 0, 0.05) 0 -12px 30px,
+                rgba(0, 0, 0, 0.05) 0 4px 6px,
+                rgba(0, 0, 0, 0.05) 0 12px 3px,
+                rgba(0, 0, 0, 0.05) 0 -3px 5px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #339cff, 0 0 20px #3352ffff; /* blue glow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#submit.loading i {
+    animation: spin 1s linear infinite;
+}/* Gemini-style animated blue glow for input */
+@keyframes geminiGlow {
+    0% {
+        box-shadow: 0 0 8px #339cff, 0 0 16px #66c2ff, 0 0 24px #339cff;
+    }
+    25% {
+        box-shadow: 0 0 12px #66c2ff, 0 0 20px #339cff, 0 0 28px #33aaff;
+    }
+    50% {
+        box-shadow: 0 0 16px #33aaff, 0 0 24px #339cff, 0 0 32px #66c2ff;
+    }
+    75% {
+        box-shadow: 0 0 12px #339cff, 0 0 20px #66c2ff, 0 0 28px #33aaff;
+    }
+    100% {
+        box-shadow: 0 0 8px #339cff, 0 0 16px #66c2ff, 0 0 24px #339cff;
+    }
+}
+
+.loadingInput {
+    animation: geminiGlow 2s ease-in-out infinite;
+    border: 1px solid #339cff; /* subtle matching border */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+
+#submit {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submit i:hover {
+    color: #fff;
+}
+
+.info {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    color: #b4b4b4;
+}
+
+/* dropdown css */
+
+.dropDown {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    width: 150px;
+
+    background-color: #323232;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    text-align: left;
+    z-index: 1000;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropDownItem {
+    font-size: 0.9rem;
+    margin: 0.3rem 0rem;
+    padding: 0.5rem 0.2rem;
+    cursor: pointer;
+}
+
+
+.dropDownItem:hover {
+    background-color: rgba(180, 180, 180, 0.1);
+    border-radius: 6px;
+}
